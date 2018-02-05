@@ -32,7 +32,7 @@ class LinearRing extends LineString
         $firstPosition = $firstPosition instanceof Point ? $firstPosition->getCoordinates() : $firstPosition;
 
         if ($lastPosition !== $firstPosition) {
-            throw new \InvalidArgumentException('LinearRing requires the first and last positions to be equivalent');
+            $positions[] = $firstPosition;
         }
 
         call_user_func_array(array('parent', '__construct'), func_get_args());
