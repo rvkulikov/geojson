@@ -27,6 +27,7 @@ class Point extends Geometry
         }
 
         foreach ($position as $value) {
+            $value = floatval($value);
             if ( ! is_int($value) && ! is_float($value)) {
                 throw new \InvalidArgumentException('Position elements must be integers or floats');
             }
